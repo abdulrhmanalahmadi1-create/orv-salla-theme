@@ -1,0 +1,20 @@
+ORV — قبل الاستيراد إلى سلة
+
+هذا القالب مبني على Theme Raed الرسمي وتم تغيير هوية القالب إلى ORV.
+
+مهم جدًا قبل Import Theme:
+1) ارفعي محتويات هذا المجلد إلى GitHub بحيث يكون twilight.json في جذر الـ repository مباشرة.
+2) افتحي twilight.json وعدلي فقط:
+   - repository: ضعي رابط Repository الحقيقي على GitHub بدل USERNAME.
+   - author_email: ضعي بريدك الحقيقي بدل abdulrhmanalahmadi1-create@users.noreply.github.com.
+3) افتحي package.json وعدلي repository.url إلى نفس رابط GitHub (اختياري للاستيراد لكنه أفضل).
+4) Commit & Push.
+5) في Salla Partners > My Themes > Import Theme اختاري نفس Repository.
+
+لا ترفعي مجلد ORV-Salla-Ready كمجلد داخل Repository؛ المطلوب أن تظهر الملفات مباشرة في الجذر:
+- twilight.json
+- package.json
+- src/
+- public/
+- webpack.config.js
+
