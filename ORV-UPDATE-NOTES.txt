@@ -1,0 +1,16 @@
+ORV DARK THEME UPDATE
+
+What changed:
+- Simplified dark homepage for a focused product range.
+- Black/charcoal background with muted olive accents.
+- Simple single-row header.
+- Hero: MODIFY RIGHT.
+- Four focused solution cards: Lighting, Electrical, Shelter & Camp, Installation.
+- Latest Salla products pulled dynamically from the store.
+- Workshop section with WhatsApp contact when available.
+
+After uploading to GitHub:
+1) Commit + Sync/Push.
+2) Open Salla Partners > your ORV theme > Preview.
+3) Make sure your store logo is uploaded in Salla; it is used automatically.
+4) Add products in Salla; the homepage pulls the latest products automatically.

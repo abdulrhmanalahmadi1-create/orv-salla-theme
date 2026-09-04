@@ -5,7 +5,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/USERNAME/orv-salla-theme.git"
+    "url": "git+https://github.com/abdulrhmanalahmadi1-create/orv-salla-theme.git"
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",

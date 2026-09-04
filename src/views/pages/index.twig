@@ -1,14 +1,95 @@
-{#
-| Variable         | Type       | Description                                                         |
-|------------------|------------|---------------------------------------------------------------------|
-| page             | object     |                                                                     |
-| page.title       | string     | *could be html                                                      |
-| page.slug        | string     | ex: "cat.show"                                                      |
-#}
 {% extends "layouts.master" %}
+
 {% block content %}
-    {% component home %}
+<div class="orv-home">
+  <section class="orv-hero">
+    <div class="orv-hero__grid"></div>
+    <div class="container orv-hero__content">
+      <div class="orv-kicker">ORV • OFF ROAD VEHICLES</div>
+      <h1>MODIFY<br><span>RIGHT.</span></h1>
+      <p class="orv-hero__lead">Overlanding gear, lighting, electrical systems and workshop installation — built around the way you use your vehicle.</p>
+      <div class="orv-hero__actions">
+        <a class="orv-btn orv-btn--primary" href="#orv-products">SHOP PRODUCTS</a>
+        <a class="orv-btn orv-btn--ghost" href="#orv-workshop">WORKSHOP</a>
+      </div>
+      <div class="orv-hero__meta">
+        <div><strong>01</strong><span>Curated gear</span></div>
+        <div><strong>02</strong><span>Complete electrical solutions</span></div>
+        <div><strong>03</strong><span>Workshop installation</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="orv-section orv-solutions" id="orv-solutions">
+    <div class="container">
+      <div class="orv-section__head">
+        <div>
+          <span class="orv-eyebrow">START SIMPLE</span>
+          <h2>WHAT ARE YOU BUILDING?</h2>
+        </div>
+        <p>We keep the range focused: the parts and systems that make a real difference on an overland build.</p>
+      </div>
+      <div class="orv-solution-grid">
+        <a class="orv-solution-card" href="{{ store.url }}/products">
+          <span class="orv-card-no">01</span><div class="orv-solution-icon">✦</div>
+          <h3>LIGHTING</h3><p>Light bars, work lights, spot lights and practical lighting for camp and trail use.</p>
+          <span class="orv-card-link">Explore products →</span>
+        </a>
+        <a class="orv-solution-card" href="{{ store.url }}/products">
+          <span class="orv-card-no">02</span><div class="orv-solution-icon">⌁</div>
+          <h3>ELECTRICAL</h3><p>Switch panel solutions supplied with the relays, fuses and wiring needed for a clean install.</p>
+          <span class="orv-card-link">Explore products →</span>
+        </a>
+        <a class="orv-solution-card" href="{{ store.url }}/products">
+          <span class="orv-card-no">03</span><div class="orv-solution-icon">△</div>
+          <h3>SHELTER & CAMP</h3><p>270° awnings, rooftop tent options and compact gear for a more practical camp setup.</p>
+          <span class="orv-card-link">Explore products →</span>
+        </a>
+        <a class="orv-solution-card" href="#orv-workshop">
+          <span class="orv-card-no">04</span><div class="orv-solution-icon">＋</div>
+          <h3>INSTALLATION</h3><p>Bring the build together at the ORV workshop with fitting and system installation.</p>
+          <span class="orv-card-link">See workshop →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="orv-section orv-products" id="orv-products">
+    <div class="container">
+      <div class="orv-section__head orv-section__head--products">
+        <div><span class="orv-eyebrow">ORV PICKS</span><h2>FEATURED PRODUCTS</h2></div>
+        <a class="orv-text-link" href="{{ store.url }}/products">View all products →</a>
+      </div>
+      <div class="orv-product-shell">
+        <salla-products-list data-testid="orv-home-latest-products" source="latest" limit="8"></salla-products-list>
+      </div>
+    </div>
+  </section>
+
+  <section class="orv-workshop" id="orv-workshop">
+    <div class="container">
+      <div class="orv-workshop__panel">
+        <div class="orv-workshop__visual" aria-hidden="true">
+          <div class="orv-workshop__badge">ORV<br>WORKSHOP</div><div class="orv-workshop__line"></div>
+        </div>
+        <div class="orv-workshop__copy">
+          <span class="orv-eyebrow">NOT JUST PARTS</span><h2>BUILD IT<br>RIGHT.</h2>
+          <p>Need more than a product? Our workshop installs lighting and complete electrical solutions, and helps bring your overlanding setup together properly.</p>
+          <div class="orv-workshop__points"><span>Lighting installation</span><span>Switch panel systems</span><span>Overland accessories</span><span>Custom build support</span></div>
+          {% if store.contacts.whatsapp %}
+            <a class="orv-btn orv-btn--primary" href="https://wa.me/{{ store.contacts.whatsapp|replace({' ': '', '+': ''}) }}" target="_blank" rel="noopener">ASK THE WORKSHOP</a>
+          {% else %}
+            <a class="orv-btn orv-btn--primary" href="{{ store.url }}/contact">CONTACT ORV</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="orv-manifesto">
+    <div class="container"><p>LESS RANDOM MODS.<br><strong>MORE COMPLETE SOLUTIONS.</strong></p><span>ORV • MODIFY RIGHT</span></div>
+  </section>
+</div>
 {% endblock %}
-{% block scripts %}
-    <script defer src="{{ 'home.js' | asset }}"></script>
-{% endblock %}
+
+{% block scripts %}<script defer src="{{ 'home.js' | asset }}"></script>{% endblock %}
